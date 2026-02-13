@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Lista de tareas</title>
+</head>
+<body>
+
+<h2>Mis tareas</h2>
+
+<input type="text" id="tarea" placeholder="Escribe una tarea">
+<button onclick="agregarTarea()">Agregar</button>
+
+<ul id="lista"></ul>
+
+<script>
+function agregarTarea() {
+    // Obtener el texto del input
+    const texto = document.getElementById("tarea").value;
+
+    if (texto.trim() === "") return;
+
+    // Crear un elemento <li>
+    const nuevaTarea = document.createElement("li");
+    nuevaTarea.textContent = texto;
+
+    // Agregarlo a la lista
+    document.getElementById("lista").appendChild(nuevaTarea);
+
+    // Limpiar el input
+    document.getElementById("tarea").value = "";
+}
+</script>
+
+</body>
+</html>
